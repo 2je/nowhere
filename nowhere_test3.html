@@ -1,55 +1,57 @@
 <!DOCTYPE html>
-<html>
-        <head>
-                
-        </head>
+<title> testmap </title>
+
+<head>
 	
+</head>
+
 <body>
 	
 	<script>
 
 	var x = document.getElementById("demo");
 		
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+	function getLocation() {
+	  if (navigator.geolocation) {
+	    navigator.geolocation.watchPosition(showPosition);
+	  } else { 
+	    x.innerHTML = "Geolocation is not supported by this browser.";
+	  }
+	}
   
   
-function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude +
-    "<br>Altiitude: " + position.coords.altiitude +
-    "<br>Accuracy: " + position.coords.accuracy +
-    "<br>Time" + Date()
-    ;
-}
-
-     
-</script>
+	function showPosition(position) {
+	    x.innerHTML="Latitude: " + position.coords.latitude + 
+	    "<br>Longitude: " + position.coords.longitude +
+	    "<br>Altiitude: " + position.coords.altiitude +
+	    "<br>Accuracy: " + position.coords.accuracy +
+	    "<br>Time" + Date()
+	    ;
+	} 
+	</script>
 	
 	<p>Click the button to get your location and time </p>
+	
 	<button onclick="getLocation()">this is the button</button>
+	
 	<p id ="demo"></p>
 
- <form action="/action_page.php">
-  <label for="score">my current score on this location is </label>
-  <select id="score" name="score">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
+	 <form action="/action_page.php">
+	  <label for="score">my current score on this location is </label>
+	  <select id="score" name="score">
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	  </select>
 
-  <input type="submit" value="Submit">
-</form>
+	  <input type="submit" value="Submit">
+	</form>
 
  
 </body>
+
 </html>
 
 	
