@@ -8,13 +8,8 @@
 	
 	<script>
 
-	<p>Click the button to get your location and time </p>
-	<button onclick="getLocation()">this is the button</button>
-	<p id ="demo"></p>
-
 	var x = document.getElementById("demo");
-
-    
+		
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.watchPosition(showPosition);
@@ -35,6 +30,10 @@ function showPosition(position) {
 
      
 </script>
+	
+	<p>Click the button to get your location and time </p>
+	<button onclick="getLocation()">this is the button</button>
+	<p id ="demo"></p>
 
  <form action="/action_page.php">
   <label for="score">my current score on this location is </label>
@@ -52,3 +51,5 @@ function showPosition(position) {
  
 </body>
 </html>
+
+	
