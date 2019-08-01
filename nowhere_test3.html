@@ -1,33 +1,18 @@
 <!DOCTYPE html>
 <html>
-
-	<style type="text/css">
-      html, body, #basicMap {
-          width: 100%;
-          height: 200px;
-          margin: 0;
-      }
-    </style>
-    
-<body onload="init();">
+        <head>
+                
+        </head>
+	
+<body>
 
 	<p>Click the button to get your location and time </p>
 	<button onclick="getLocation()">this is the button</button>
 	<p id ="demo"></p>
 
-	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-	<script>
+
 
 		var x = document.getElementById("demo");
-		
-		//open street map view
-		var lat = position.coords.latitude;
- 		var lon = position.longitude;
-	
-		 var map = new OpenLayers.Map("basicMap");
- 		 map.addLayer(new OpenLayers.Layer.OSM());
-  	 	 map.zoomToMaxExtent();
-
 
     
 function getLocation() {
@@ -48,34 +33,10 @@ function showPosition(position) {
     ;
 }
 
-//open street map view
-function init() {
-        map = new OpenLayers.Map("basicMap");
-	
-	
-        var mapnik         = new OpenLayers.Layer.OSM();
-        var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-        var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-        var position       = new OpenLayers.LonLat(lon,lat).transform( fromProjection, toProjection); //lon, lat variables
-        var zoom           = 10;  
-
-        map.addLayer(mapnik);
-        map.setCenter(position, zoom );
-      }
-      
-
+     
 </script>
 
 
-<!--지도는 일단 가려둠
-<iframe width=100% height="100" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=126.91815555095674%2C37.54535142415795%2C126.92502200603487%2C37.548145785128625&amp;layer=mapnik&amp;marker=37.54674861773712%2C126.92158877849579" ></iframe><br/><small>
--->
-
-
-	<div id="basicMap"></div>
-
-
-	<p> -end-  </p>
 
 
  <form action="/action_page.php">
